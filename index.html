@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Estimator</title>
+    <meta name="description" content="Estimate the budget and timeline of your UI UX design project in under a minute." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Geologica:wght,CRSV@100..900,0&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" />
+    <link rel="stylesheet" href="estimator.css?v=1" />
+
+    <style>
+        /* demo page only — on zeeframes.com the site's own body styles apply */
+        html,
+        body {
+            margin: 0;
+            background: #0B0B0B;
+        }
+
+        body.is-light {
+            background: #FAF9F4;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============ ZeeFrames · Project Estimator ============ -->
+    <section class="zfe" id="estimator" aria-labelledby="zfeTitle">
+        <div class="zfe-container">
+
+            <div class="zfe-head">
+                <div>
+                    <span class="zfe-eyebrow">Project Estimator</span>
+                    <h2 class="zfe-title" id="zfeTitle">Estimate Your Design Budget In Under A Minute</h2>
+                </div>
+                <p class="zfe-desc">Pick a service, set the scope and see a realistic price range and timeline, the same way our team scopes fixed-price projects.</p>
+            </div>
+
+            <div class="zfe-layout">
+
+                <form class="zfe-panel" id="zfeForm" onsubmit="return false">
+
+                    <!-- 01 -->
+                    <fieldset class="zfe-step">
+                        <legend class="zfe-sr">What are we designing?</legend>
+                        <div class="zfe-step-head" aria-hidden="true">
+                            <div class="zfe-step-name">
+                                <span class="zfe-step-num">01</span>
+                                <h3 class="zfe-step-title">What are we designing?</h3>
+                            </div>
+                        </div>
+
+                        <div class="zfe-services">
+                            <label class="zfe-service">
+                                <input class="zfe-sr" type="radio" name="service" value="saas" checked />
+                                <span class="zfe-service-top">
+                                    <span class="zfe-icon">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                            <rect x="2.75" y="3.25" width="14.5" height="13.5" rx="2.5" stroke="currentColor" stroke-width="1.5" />
+                                            <path d="M2.75 7.75h14.5M7.75 7.75v9" stroke="currentColor" stroke-width="1.5" />
+                                        </svg>
+                                    </span>
+                                    <span class="zfe-radio"></span>
+                                </span>
+                                <span class="zfe-service-body">
+                                    <span class="zfe-service-tag">For digital experiences</span>
+                                    <span class="zfe-service-name">SaaS UI UX Design</span>
+                                </span>
+                            </label>
+
+                            <label class="zfe-service">
+                                <input class="zfe-sr" type="radio" name="service" value="mobile" />
+                                <span class="zfe-service-top">
+                                    <span class="zfe-icon">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                            <rect x="5.25" y="2.25" width="9.5" height="15.5" rx="2.25" stroke="currentColor" stroke-width="1.5" />
+                                            <path d="M8.75 14.5h2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        </svg>
+                                    </span>
+                                    <span class="zfe-radio"></span>
+                                </span>
+                                <span class="zfe-service-body">
+                                    <span class="zfe-service-tag">For iOS &amp; Android products</span>
+                                    <span class="zfe-service-name">Mobile App Design</span>
+                                </span>
+                            </label>
+
+                            <label class="zfe-service">
+                                <input class="zfe-sr" type="radio" name="service" value="mvp" />
+                                <span class="zfe-service-top">
+                                    <span class="zfe-icon">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                            <path d="M8.2 11.8c1.4-4.3 4.4-7.6 8.8-8.8-1.2 4.4-4.5 7.4-8.8 8.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                                            <path d="M8.2 11.8 5.4 11l1.5-2.7 3.1-.3M8.2 11.8l.8 2.8 2.7-1.5.3-3.1" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                                            <path d="M5.3 14.7 3 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        </svg>
+                                    </span>
+                                    <span class="zfe-radio"></span>
+                                </span>
+                                <span class="zfe-service-body">
+                                    <span class="zfe-service-tag">For startups &amp; founders</span>
+                                    <span class="zfe-service-name">MVP Design</span>
+                                </span>
+                            </label>
+
+                            <label class="zfe-service">
+                                <input class="zfe-sr" type="radio" name="service" value="revamp" />
+                                <span class="zfe-service-top">
+                                    <span class="zfe-icon">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                            <path d="M16.25 10a6.25 6.25 0 0 1-11.1 3.9M3.75 10a6.25 6.25 0 0 1 11.1-3.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                            <path d="M15 3.5v2.9h-2.9M5 16.5v-2.9h2.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+                                    <span class="zfe-radio"></span>
+                                </span>
+                                <span class="zfe-service-body">
+                                    <span class="zfe-service-tag">For existing products</span>
+                                    <span class="zfe-service-name">Product Revamp</span>
+                                </span>
+                            </label>
+
+                            <label class="zfe-service">
+                                <input class="zfe-sr" type="radio" name="service" value="website" />
+                                <span class="zfe-service-top">
+                                    <span class="zfe-icon">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                            <circle cx="10" cy="10" r="7.25" stroke="currentColor" stroke-width="1.5" />
+                                            <path d="M2.75 10h14.5M10 2.75c2 2 2.9 4.5 2.9 7.25S12 15.25 10 17.25C8 15.25 7.1 12.75 7.1 10S8 4.75 10 2.75Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+                                    <span class="zfe-radio"></span>
+                                </span>
+                                <span class="zfe-service-body">
+                                    <span class="zfe-service-tag">For marketing teams</span>
+                                    <span class="zfe-service-name">Website Design</span>
+                                </span>
+                            </label>
+
+                            <label class="zfe-service">
+                                <input class="zfe-sr" type="radio" name="service" value="nocode" />
+                                <span class="zfe-service-top">
+                                    <span class="zfe-icon">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                            <rect x="3" y="3" width="5.5" height="5.5" rx="1.5" stroke="currentColor" stroke-width="1.5" />
+                                            <rect x="11.5" y="3" width="5.5" height="5.5" rx="1.5" stroke="currentColor" stroke-width="1.5" />
+                                            <rect x="3" y="11.5" width="5.5" height="5.5" rx="1.5" stroke="currentColor" stroke-width="1.5" />
+                                            <path d="M14.25 11.5v5.5M11.5 14.25H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        </svg>
+                                    </span>
+                                    <span class="zfe-radio"></span>
+                                </span>
+                                <span class="zfe-service-body">
+                                    <span class="zfe-service-tag">For rapid app builders</span>
+                                    <span class="zfe-service-name">No-Code Development</span>
+                                </span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- 02 -->
+                    <div class="zfe-step">
+                        <div class="zfe-step-head">
+                            <div class="zfe-step-name">
+                                <span class="zfe-step-num">02</span>
+                                <h3 class="zfe-step-title" id="zfeScopeTitle">How many unique screens?</h3>
+                            </div>
+                            <p class="zfe-step-hint" id="zfeScopeHint">Count distinct layouts, not states.</p>
+                        </div>
+
+                        <div class="zfe-scope">
+                            <div class="zfe-scope-value" aria-live="polite"><span id="zfeScopeNum">30</span><small id="zfeScopeUnit">screens</small></div>
+                            <div class="zfe-stepper">
+                                <button type="button" data-step="-1" aria-label="Fewer screens">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8h9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>
+                                </button>
+                                <button type="button" data-step="1" aria-label="More screens">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <input class="zfe-range" id="zfeScope" type="range" min="5" max="120" step="1" value="30" aria-labelledby="zfeScopeTitle" />
+                        <div class="zfe-ticks" id="zfeTicks" aria-hidden="true"></div>
+                    </div>
+
+                    <!-- 03 -->
+                    <fieldset class="zfe-step">
+                        <legend class="zfe-sr">Which platforms?</legend>
+                        <div class="zfe-step-head" aria-hidden="true">
+                            <div class="zfe-step-name">
+                                <span class="zfe-step-num">03</span>
+                                <h3 class="zfe-step-title">Which platforms?</h3>
+                            </div>
+                            <p class="zfe-step-hint">Pick one or more.</p>
+                        </div>
+                        <div class="zfe-seg zfe-seg--row">
+                            <label class="zfe-seg-item">
+                                <input class="zfe-sr" type="checkbox" name="platform" value="web" checked />
+                                <span class="zfe-seg-box"><span class="zfe-seg-label">Web app</span></span>
+                            </label>
+                            <label class="zfe-seg-item">
+                                <input class="zfe-sr" type="checkbox" name="platform" value="ios" />
+                                <span class="zfe-seg-box"><span class="zfe-seg-label">iOS</span></span>
+                            </label>
+                            <label class="zfe-seg-item">
+                                <input class="zfe-sr" type="checkbox" name="platform" value="android" />
+                                <span class="zfe-seg-box"><span class="zfe-seg-label">Android</span></span>
+                            </label>
+                        </div>
+                        <p class="zfe-note" id="zfePlatformNote">Every website is designed responsive: desktop, tablet and mobile are included.</p>
+                    </fieldset>
+
+                    <!-- 04 -->
+                    <fieldset class="zfe-step">
+                        <legend class="zfe-sr">How complex is the product?</legend>
+                        <div class="zfe-step-head" aria-hidden="true">
+                            <div class="zfe-step-name">
+                                <span class="zfe-step-num">04</span>
+                                <h3 class="zfe-step-title">How complex is the product?</h3>
+                            </div>
+                        </div>
+                        <div class="zfe-seg">
+                            <label class="zfe-seg-item">
+                                <input class="zfe-sr" type="radio" name="complexity" value="simple" />
+                                <span class="zfe-seg-box">
+                                    <span class="zfe-seg-label">Simple</span>
+                                    <span class="zfe-seg-sub">Content, forms, linear flows</span>
+                                </span>
+                            </label>
+                            <label class="zfe-seg-item">
+                                <input class="zfe-sr" type="radio" name="complexity" value="standard" checked />
+                                <span class="zfe-seg-box">
+                                    <span class="zfe-seg-label">Standard</span>
+                                    <span class="zfe-seg-sub">Dashboards, core user flows</span>
+                                </span>
+                            </label>
+                            <label class="zfe-seg-item">
+                                <input class="zfe-sr" type="radio" name="complexity" value="complex" />
+                                <span class="zfe-seg-box">
+                                    <span class="zfe-seg-label">Complex</span>
+                                    <span class="zfe-seg-sub">Multi-role, data-heavy, AI</span>
+                                </span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- 05 -->
+                    <fieldset class="zfe-step">
+                        <legend class="zfe-sr">What else do you need?</legend>
+                        <div class="zfe-step-head" aria-hidden="true">
+                            <div class="zfe-step-name">
+                                <span class="zfe-step-num">05</span>
+                                <h3 class="zfe-step-title">What else do you need?</h3>
+                            </div>
+                            <p class="zfe-step-hint">Developer handoff is always included.</p>
+                        </div>
+                        <div class="zfe-addons" id="zfeAddons"></div>
+                    </fieldset>
+
+                    <!-- 06 -->
+                    <fieldset class="zfe-step">
+                        <legend class="zfe-sr">When do you need it?</legend>
+                        <div class="zfe-step-head" aria-hidden="true">
+                            <div class="zfe-step-name">
+                                <span class="zfe-step-num">06</span>
+                                <h3 class="zfe-step-title">When do you need it?</h3>
+                            </div>
+                        </div>
+                        <div class="zfe-seg">
+                            <label class="zfe-seg-item">
+                                <input class="zfe-sr" type="radio" name="pace" value="standard" checked />
+                                <span class="zfe-seg-box">
+                                    <span class="zfe-seg-label">Standard pace</span>
+                                    <span class="zfe-seg-sub">Kickoff within 1–2 weeks</span>
+                                </span>
+                            </label>
+                            <label class="zfe-seg-item">
+                                <input class="zfe-sr" type="radio" name="pace" value="priority" />
+                                <span class="zfe-seg-box">
+                                    <span class="zfe-seg-label">Priority start</span>
+                                    <span class="zfe-seg-sub">Kickoff in 48 hours, extra designer</span>
+                                </span>
+                            </label>
+                        </div>
+                    </fieldset>
+                </form>
+
+                <aside class="zfe-aside" aria-label="Your estimate">
+                    <div class="zfe-result" id="zfeResult">
+                        <div class="zfe-res-top">
+                            <span class="zfe-res-label">Estimated investment</span>
+                            <span class="zfe-pill"><i></i>Fixed price</span>
+                        </div>
+                        <p class="zfe-price" id="zfePrice" aria-live="polite"><span id="zfeLow">$0</span> <span class="zfe-price-dash">–</span> <span id="zfeHigh">$0</span></p>
+                        <p class="zfe-price-sub" id="zfeService">SaaS UI UX Design</p>
+
+                        <div class="zfe-stats">
+                            <div class="zfe-stat">
+                                <p class="zfe-stat-label">Timeline</p>
+                                <p class="zfe-stat-value" id="zfeWeeks">0 weeks</p>
+                                <p class="zfe-stat-sub" id="zfeKickoff">from kickoff</p>
+                            </div>
+                            <div class="zfe-stat">
+                                <p class="zfe-stat-label">Your team</p>
+                                <p class="zfe-stat-value" id="zfeTeam">0 designers</p>
+                                <p class="zfe-stat-sub">+ project manager</p>
+                            </div>
+                        </div>
+
+                        <div class="zfe-phases">
+                            <div class="zfe-bar" id="zfeBar" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+                            <ul class="zfe-legend" id="zfeLegend">
+                                <li><i></i>Discovery<b></b></li>
+                                <li><i></i>UI design<b></b></li>
+                                <li><i></i>Prototype &amp; test<b></b></li>
+                                <li><i></i>Handoff<b></b></li>
+                            </ul>
+                        </div>
+
+                        <ul class="zfe-lines" id="zfeLines"></ul>
+
+                        <a class="zfe-cta" id="zfeCta" href="https://zeeframes.com/work-with-us">
+                            Get Your Exact Quote
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                <path d="M14.5833 5.41699L5 15.0003" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M6.66666 5H15V13.3333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <p class="zfe-cta-note">Get pricing and a start date within 24 hours.</p>
+                    </div>
+                    <p class="zfe-disclaimer">An indicative range based on typical ZeeFrames engagements. Your fixed price is confirmed after a 30-minute scoping call.</p>
+                </aside>
+            </div>
+
+            <div class="zfe-mbar" id="zfeMbar">
+                <div>
+                    <p class="zfe-mbar-label" id="zfeMbarLabel">Your estimate</p>
+                    <p class="zfe-mbar-value" id="zfeMbarValue">$0 – $0</p>
+                </div>
+                <a href="#zfeResult">Details</a>
+            </div>
+        </div>
+    </section>
+    <!-- ============ /Project Estimator ============ -->
+
+    <script>
+        /* demo only: ?theme=light shows the cream variant */
+        if (/[?&]theme=(light|cream)/.test(location.search)) {
+            document.body.classList.add('is-light');
+            document.getElementById('estimator').classList.add('zfe--light');
+        }
+    </script>
+    <script src="estimator.js?v=1"></script>
+</body>
+
+</html>

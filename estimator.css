@@ -1,0 +1,1260 @@
+/* ZeeFrames — Project Estimator block
+   Namespaced with .zfe-* so it can be dropped into any page of zeeframes.com.
+   Tokens mirror colors.css / service-page.css of the live site. */
+
+.zfe {
+    --zfe-primary: var(--color-primary, #F3FE00);
+    --zfe-bg: var(--color-black-300, #0B0B0B);
+    --zfe-panel: var(--color-rich-black, #151515);
+    --zfe-card: var(--color-black-210, #1F1F1F);
+    --zfe-card-hover: #252525;
+    --zfe-card-active: var(--color-black-180, #1C1D08);
+    --zfe-line: var(--color-gray-muted, #373737);
+    --zfe-line-soft: rgba(255, 255, 255, 0.08);
+    --zfe-text: #FFFFFF;
+    --zfe-text-2: #D4D4D8;
+    --zfe-text-3: #A1A1AA;
+    --zfe-text-4: #71717A;
+    --zfe-eyebrow: var(--zfe-primary);
+    --zfe-icon-bg: rgba(243, 254, 0, 0.10);
+    --zfe-icon-border: rgba(243, 254, 0, 0.20);
+    --zfe-icon-stroke: var(--zfe-primary);
+    --zfe-seg-bg: #18181B;
+    --zfe-seg-active-bg: #282601;
+    --zfe-seg-active-text: var(--zfe-primary);
+    --zfe-check-bg: #2B2A2A;
+    --zfe-check-border: #373636;
+    --zfe-row-bg: rgba(255, 255, 255, 0.04);
+    --zfe-row-border: #3C3C3C;
+    --zfe-glow: radial-gradient(circle, rgba(243, 254, 0, 0.75) 0%, rgba(243, 254, 0, 0.35) 20%, rgba(243, 254, 0, 0.15) 45%, rgba(243, 254, 0, 0.05) 70%, transparent 100%);
+
+    /* result card — the white "CTA card" from the service pages */
+    --zfe-res-bg: #FFFFFF;
+    --zfe-res-border: #E4E4E7;
+    --zfe-res-text: #27272A;
+    --zfe-res-text-2: #52525B;
+    --zfe-res-text-3: #797A71;
+    --zfe-res-line: #E4E4E7;
+    --zfe-res-btn-bg: #000000;
+    --zfe-res-btn-text: #FFFFFF;
+    --zfe-bar-1: #F3FE00;
+    --zfe-bar-2: #C1C300;
+    --zfe-bar-3: #2E3000;
+    --zfe-bar-4: #D4D4D8;
+
+    position: relative;
+    padding: 80px 0;
+    background-color: var(--zfe-bg);
+    color: var(--zfe-text);
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Cream variant — for placing the block between two dark sections */
+.zfe.zfe--light {
+    --zfe-bg: var(--color-cream-white, #FAF9F4);
+    --zfe-panel: #FFFFFF;
+    --zfe-card: #FFFFFF;
+    --zfe-card-hover: var(--color-gray-50, #E7E7E7);
+    --zfe-card-active: #FEFFE6;
+    --zfe-line: var(--color-gray-410, #CDCDCD);
+    --zfe-line-soft: #E4E4E7;
+    --zfe-text: #27272A;
+    --zfe-text-2: #52525B;
+    --zfe-text-3: #797A71;
+    --zfe-text-4: #71717A;
+    --zfe-eyebrow: #18181B;
+    --zfe-icon-bg: #FAF9F4;
+    --zfe-icon-border: #E7E7E4;
+    --zfe-icon-stroke: #27272A;
+    --zfe-seg-bg: #F4F2E8;
+    --zfe-seg-active-bg: #FFFFFF;
+    --zfe-seg-active-text: #18181B;
+    --zfe-check-bg: #FFFFFF;
+    --zfe-check-border: #D4D4D8;
+    --zfe-row-bg: #FFFFFF;
+    --zfe-row-border: #E4E4E7;
+    --zfe-glow: radial-gradient(circle, rgba(243, 254, 0, 0.55) 0%, rgba(243, 254, 0, 0.25) 25%, rgba(243, 254, 0, 0.08) 55%, transparent 100%);
+
+    --zfe-res-bg: #09090B;
+    --zfe-res-border: #09090B;
+    --zfe-res-text: #FFFFFF;
+    --zfe-res-text-2: #D4D4D8;
+    --zfe-res-text-3: #A1A1AA;
+    --zfe-res-line: rgba(255, 255, 255, 0.10);
+    --zfe-res-btn-bg: #F3FE00;
+    --zfe-res-btn-text: #0D0D0D;
+    --zfe-bar-3: #5B5C1A;
+    --zfe-bar-4: #3F3F46;
+}
+
+.zfe *,
+.zfe *::before,
+.zfe *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.zfe button {
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+.zfe-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+.zfe-inter {
+    font-family: Inter, sans-serif;
+}
+
+.zfe-sr {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ── Header ─────────────────────────────────────────── */
+
+.zfe-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+    padding-bottom: 48px;
+}
+
+.zfe-eyebrow {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--zfe-eyebrow);
+}
+
+.zfe-title {
+    max-width: 560px;
+    margin-top: 16px;
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 500;
+    letter-spacing: -0.72px;
+    color: var(--zfe-text);
+}
+
+.zfe-desc {
+    max-width: 447px;
+    margin-top: 36px;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--zfe-text-2);
+}
+
+/* ── Layout ─────────────────────────────────────────── */
+
+.zfe-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 410px;
+    gap: 24px;
+    align-items: start;
+}
+
+.zfe-panel {
+    border-radius: 14px;
+    border: 1px solid var(--zfe-line-soft);
+    background-color: var(--zfe-panel);
+}
+
+.zfe-step {
+    padding: 32px;
+    border: 0;
+    border-top: 1px solid var(--zfe-line-soft);
+    min-width: 0;
+}
+
+.zfe-step:first-child {
+    border-top: 0;
+}
+
+.zfe-step-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.zfe-step-name {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.zfe-step-num {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    color: var(--zfe-eyebrow);
+}
+
+.zfe-step-title {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+    color: var(--zfe-text);
+}
+
+.zfe-step-hint {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--zfe-text-3);
+    text-align: right;
+}
+
+/* ── 01 Service cards (joined grid, like "What's included") ── */
+
+.zfe-services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--zfe-line);
+    border-radius: 14px;
+    overflow: hidden;
+    gap: 1px;
+    background-color: var(--zfe-line);
+}
+
+.zfe-service {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+    min-height: 176px;
+    padding: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: var(--zfe-card);
+    transition: background-color .3s ease;
+}
+
+.zfe-service::before,
+.zfe-result::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: -330px;
+    left: -270px;
+    border-radius: 50%;
+    background: var(--zfe-glow);
+    filter: blur(50px);
+    opacity: 0;
+    transition: opacity .3s ease;
+    pointer-events: none;
+}
+
+.zfe-service:hover {
+    background-color: var(--zfe-card-hover);
+}
+
+.zfe-service::before {
+    top: -380px;
+    left: -330px;
+}
+
+.zfe-service:hover::before {
+    opacity: .35;
+}
+
+.zfe-service:has(input:checked) {
+    background-color: var(--zfe-card-active);
+}
+
+.zfe-service:has(input:checked)::before {
+    opacity: .75;
+}
+
+.zfe-service:has(input:focus-visible) {
+    outline: 2px solid var(--zfe-primary);
+    outline-offset: -2px;
+}
+
+.zfe-service-top {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.zfe-service-body {
+    position: relative;
+}
+
+.zfe-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    border: 0.8px solid var(--zfe-icon-border);
+    background: var(--zfe-icon-bg);
+    color: var(--zfe-icon-stroke);
+    transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+}
+
+.zfe-service:has(input:checked) .zfe-icon {
+    background-color: var(--zfe-primary);
+    border-color: var(--zfe-primary);
+    color: #0D0D0D;
+}
+
+.zfe-radio {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1.5px solid var(--zfe-line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color .3s ease;
+}
+
+.zfe-radio::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--zfe-primary);
+    transform: scale(0);
+    transition: transform .25s ease;
+}
+
+.zfe--light .zfe-radio::after {
+    background-color: #18181B;
+}
+
+.zfe-service:has(input:checked) .zfe-radio {
+    border-color: var(--zfe-primary);
+}
+
+.zfe--light .zfe-service:has(input:checked) .zfe-radio {
+    border-color: #18181B;
+}
+
+.zfe-service:has(input:checked) .zfe-radio::after {
+    transform: scale(1);
+}
+
+.zfe-service-tag,
+.zfe-service-name,
+.zfe-addon-desc {
+    display: block;
+}
+
+.zfe-service-tag {
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: var(--zfe-text-3);
+}
+
+.zfe-service-name {
+    margin-top: 6px;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 500;
+    color: var(--zfe-text);
+}
+
+/* ── 02 Scope slider ─────────────────────────────────── */
+
+.zfe-scope {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.zfe-scope-value {
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: 500;
+    letter-spacing: -0.96px;
+    color: var(--zfe-text);
+    font-variant-numeric: tabular-nums;
+}
+
+.zfe-scope-value small {
+    margin-left: 8px;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: var(--zfe-text-3);
+}
+
+.zfe-stepper {
+    display: flex;
+    gap: 8px;
+}
+
+.zfe-stepper button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid var(--zfe-line);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--zfe-text);
+    transition: background-color .3s ease, border-color .3s ease, color .3s ease;
+}
+
+.zfe-stepper button:hover {
+    background-color: var(--zfe-text);
+    border-color: var(--zfe-text);
+    color: var(--zfe-bg);
+}
+
+.zfe-stepper button:focus-visible {
+    outline: 2px solid var(--zfe-primary);
+    outline-offset: 2px;
+}
+
+.zfe-range {
+    --p: 20%;
+    -webkit-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    height: 24px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.zfe-range::-webkit-slider-runnable-track {
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(to right, var(--zfe-primary) var(--p), var(--zfe-line) var(--p));
+}
+
+.zfe--light .zfe-range::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, #18181B var(--p), var(--zfe-line) var(--p));
+}
+
+.zfe-range::-moz-range-track {
+    height: 4px;
+    border-radius: 999px;
+    background: var(--zfe-line);
+}
+
+.zfe-range::-moz-range-progress {
+    height: 4px;
+    border-radius: 999px;
+    background: var(--zfe-primary);
+}
+
+.zfe--light .zfe-range::-moz-range-progress {
+    background: #18181B;
+}
+
+.zfe-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    margin-top: -10px;
+    border-radius: 50%;
+    background: var(--zfe-primary);
+    border: 5px solid var(--zfe-panel);
+    box-shadow: 0 0 0 1px var(--zfe-primary);
+    transition: transform .2s ease;
+}
+
+.zfe-range::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--zfe-primary);
+    border: 5px solid var(--zfe-panel);
+    box-shadow: 0 0 0 1px var(--zfe-primary);
+}
+
+.zfe--light .zfe-range::-webkit-slider-thumb {
+    box-shadow: 0 0 0 1px #18181B;
+}
+
+.zfe--light .zfe-range::-moz-range-thumb {
+    box-shadow: 0 0 0 1px #18181B;
+}
+
+.zfe-range:hover::-webkit-slider-thumb {
+    transform: scale(1.12);
+}
+
+.zfe-range:focus-visible {
+    outline: none;
+}
+
+.zfe-range:focus-visible::-webkit-slider-thumb {
+    box-shadow: 0 0 0 1px var(--zfe-primary), 0 0 0 6px rgba(243, 254, 0, 0.22);
+}
+
+.zfe-ticks {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--zfe-text-4);
+    font-variant-numeric: tabular-nums;
+}
+
+/* ── Segmented controls (the site's agency-nav pills) ── */
+
+.zfe-seg {
+    display: flex;
+    gap: 8px;
+    padding: 6px;
+    border-radius: 14px;
+    background-color: var(--zfe-seg-bg);
+}
+
+.zfe-seg-item {
+    position: relative;
+    flex: 1 1 0;
+    min-width: 0;
+    cursor: pointer;
+}
+
+.zfe-seg-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    height: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    transition: background-color .2s ease, color .2s ease;
+}
+
+.zfe-seg-label {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    color: var(--zfe-text-2);
+    transition: color .2s ease;
+}
+
+.zfe-seg-sub {
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--zfe-text-4);
+}
+
+.zfe-seg-item:hover .zfe-seg-label {
+    color: var(--zfe-seg-active-text);
+}
+
+.zfe-seg-item input:checked + .zfe-seg-box {
+    background-color: var(--zfe-seg-active-bg);
+}
+
+.zfe--light .zfe-seg-item input:checked + .zfe-seg-box {
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.06), 0 0 0 1px #E4E4E7;
+}
+
+.zfe-seg-item input:checked + .zfe-seg-box .zfe-seg-label {
+    color: var(--zfe-seg-active-text);
+}
+
+.zfe-seg-item input:focus-visible + .zfe-seg-box {
+    outline: 2px solid var(--zfe-primary);
+    outline-offset: -2px;
+}
+
+.zfe-seg-item input:disabled + .zfe-seg-box {
+    opacity: .4;
+    cursor: not-allowed;
+}
+
+.zfe-note {
+    display: none;
+    margin-top: 12px;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--zfe-text-3);
+}
+
+.zfe-note.is-on {
+    display: block;
+}
+
+/* ── 05 Add-ons (the site's FAQ accordion rows) ──────── */
+
+.zfe-addons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.zfe-addon {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--zfe-row-border);
+    background-color: var(--zfe-row-bg);
+    cursor: pointer;
+    transition: border-color .3s ease-in-out;
+}
+
+.zfe-addon:hover {
+    border-color: var(--zfe-text-4);
+}
+
+.zfe-addon:has(input:checked) {
+    border-color: var(--zfe-primary);
+}
+
+.zfe--light .zfe-addon:has(input:checked) {
+    border-color: #18181B;
+}
+
+.zfe-addon:has(input:focus-visible) {
+    outline: 2px solid var(--zfe-primary);
+    outline-offset: 2px;
+}
+
+.zfe-check {
+    position: relative;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    margin-top: 1px;
+    border-radius: 6px;
+    border: 1px solid var(--zfe-check-border);
+    background-color: var(--zfe-check-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .25s ease, border-color .25s ease;
+}
+
+.zfe-check svg {
+    opacity: 0;
+    transform: scale(.6);
+    transition: opacity .25s ease, transform .25s ease;
+}
+
+.zfe-addon:has(input:checked) .zfe-check {
+    background-color: var(--zfe-primary);
+    border-color: var(--zfe-primary);
+}
+
+.zfe-addon:has(input:checked) .zfe-check svg {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.zfe-addon-text {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.zfe-addon-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.zfe-addon-name {
+    font-family: Geologica, "Inter Tight", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    color: var(--zfe-text);
+}
+
+.zfe-addon-price {
+    flex-shrink: 0;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--zfe-text-3);
+    font-variant-numeric: tabular-nums;
+}
+
+.zfe-addon-desc {
+    margin-top: 4px;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--zfe-text-3);
+}
+
+/* ── Result card ────────────────────────────────────── */
+
+.zfe-aside {
+    position: sticky;
+    top: 104px;
+}
+
+.zfe-result {
+    position: relative;
+    overflow: hidden;
+    padding: 32px;
+    border-radius: 14px;
+    border: 1px solid var(--zfe-res-border);
+    background-color: var(--zfe-res-bg);
+    color: var(--zfe-res-text);
+}
+
+.zfe-result::before {
+    top: -360px;
+    left: auto;
+    right: -300px;
+    opacity: .5;
+}
+
+.zfe-result > * {
+    position: relative;
+}
+
+.zfe-res-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.zfe-res-label {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--zfe-res-text-2);
+}
+
+.zfe-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--zfe-res-line);
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--zfe-res-text-2);
+    white-space: nowrap;
+}
+
+.zfe-pill i {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #33DE1D;
+}
+
+.zfe-price {
+    margin-top: 12px;
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: 500;
+    letter-spacing: -0.96px;
+    color: var(--zfe-res-text);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.zfe-price.is-long {
+    font-size: 34px;
+    line-height: 44px;
+    letter-spacing: -0.68px;
+}
+
+.zfe-price-dash {
+    color: var(--zfe-res-text-3);
+    font-weight: 400;
+}
+
+.zfe-price-sub {
+    margin-top: 6px;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--zfe-res-text-2);
+}
+
+.zfe-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 24px;
+    border-top: 1px solid var(--zfe-res-line);
+    border-bottom: 1px solid var(--zfe-res-line);
+}
+
+.zfe-stat {
+    padding: 16px 0;
+}
+
+.zfe-stat + .zfe-stat {
+    padding-left: 20px;
+    border-left: 1px solid var(--zfe-res-line);
+}
+
+.zfe-stat-label {
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: var(--zfe-res-text-3);
+}
+
+.zfe-stat-value {
+    margin-top: 4px;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
+    color: var(--zfe-res-text);
+    font-variant-numeric: tabular-nums;
+}
+
+.zfe-stat-sub {
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--zfe-res-text-2);
+}
+
+/* phase bar */
+
+.zfe-phases {
+    margin-top: 24px;
+}
+
+.zfe-bar {
+    display: flex;
+    gap: 3px;
+    height: 8px;
+}
+
+.zfe-bar span {
+    min-width: 6px;
+    border-radius: 999px;
+    transition: flex-grow .6s cubic-bezier(.66, 0, 0, 1);
+}
+
+.zfe-bar span:nth-child(1),
+.zfe-legend li:nth-child(1) i {
+    background-color: var(--zfe-bar-1);
+}
+
+.zfe-bar span:nth-child(2),
+.zfe-legend li:nth-child(2) i {
+    background-color: var(--zfe-bar-2);
+}
+
+.zfe-bar span:nth-child(3),
+.zfe-legend li:nth-child(3) i {
+    background-color: var(--zfe-bar-3);
+}
+
+.zfe-bar span:nth-child(4),
+.zfe-legend li:nth-child(4) i {
+    background-color: var(--zfe-bar-4);
+}
+
+.zfe-legend {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+    margin-top: 14px;
+    list-style: none;
+}
+
+.zfe-legend li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--zfe-res-text-2);
+}
+
+.zfe-legend i {
+    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+}
+
+.zfe-legend b {
+    margin-left: auto;
+    font-weight: 500;
+    color: var(--zfe-res-text);
+    font-variant-numeric: tabular-nums;
+}
+
+/* breakdown */
+
+.zfe-lines {
+    margin-top: 24px;
+    list-style: none;
+    border-top: 1px solid var(--zfe-res-line);
+}
+
+.zfe-lines li {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--zfe-res-line);
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--zfe-res-text-2);
+}
+
+.zfe-lines li span:last-child {
+    flex-shrink: 0;
+    color: var(--zfe-res-text);
+    font-variant-numeric: tabular-nums;
+}
+
+/* CTA — .service-btn-dark / .btn-primary of the site */
+
+.zfe-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 24px;
+    padding: 12px 24px;
+    border-radius: 99999px;
+    border: 1px solid transparent;
+    background-color: var(--zfe-res-btn-bg);
+    color: var(--zfe-res-btn-text);
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+}
+
+.zfe-cta svg path {
+    stroke: currentColor;
+    transition: stroke .3s ease;
+}
+
+.zfe-cta:hover {
+    background-color: var(--color-primary, #F3FE00);
+    color: #000;
+    border-color: #000;
+}
+
+.zfe--light .zfe-cta:hover {
+    background-color: transparent;
+    color: var(--zfe-primary);
+    border-color: var(--zfe-primary);
+}
+
+.zfe-cta:focus-visible {
+    outline: 2px solid var(--zfe-primary);
+    outline-offset: 3px;
+}
+
+.zfe-cta-note {
+    margin-top: 12px;
+    text-align: center;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--zfe-res-text-2);
+}
+
+.zfe-cta-note a {
+    color: var(--zfe-res-text);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.zfe-cta-note a:hover {
+    text-decoration-color: var(--zfe-primary);
+}
+
+.zfe-disclaimer {
+    margin-top: 16px;
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--zfe-text-4);
+}
+
+/* Mobile summary bar — sticks to the bottom only while the block is on screen */
+
+.zfe-mbar {
+    display: none;
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+
+@media (max-width: 1280px) {
+    .zfe-services {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .zfe-addons {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1204px) {
+    .zfe-container {
+        padding: 0 60px;
+    }
+
+    .zfe-layout {
+        grid-template-columns: minmax(0, 1fr) 360px;
+    }
+
+    .zfe-result {
+        padding: 24px;
+    }
+
+    .zfe-price {
+        font-size: 34px;
+        line-height: 44px;
+    }
+
+    .zfe-price.is-long {
+        font-size: 28px;
+        line-height: 36px;
+    }
+}
+
+@media (max-width: 991px) {
+    .zfe {
+        padding: 40px 0;
+    }
+
+    .zfe-container {
+        padding: 0 40px;
+    }
+
+    .zfe-head {
+        flex-direction: column;
+        gap: 16px;
+        padding-bottom: 32px;
+    }
+
+    .zfe-title,
+    .zfe-desc {
+        max-width: 100%;
+        margin-top: 0;
+    }
+
+    .zfe-title {
+        margin-top: 16px;
+    }
+
+    .zfe-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .zfe-aside {
+        position: static;
+    }
+
+    .zfe-services {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .zfe-addons {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .zfe-mbar {
+        position: sticky;
+        bottom: 12px;
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 16px;
+        padding: 8px 8px 8px 20px;
+        max-width: 100%;
+        border-radius: 999px;
+        border: 1px solid var(--zfe-line);
+        background-color: rgba(13, 13, 13, 0.88);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        color: #FFFFFF;
+        transition: opacity .3s ease, transform .3s ease;
+    }
+
+    .zfe-mbar.is-hidden {
+        opacity: 0;
+        transform: translateY(12px);
+        pointer-events: none;
+    }
+
+    .zfe-mbar-label {
+        font-family: Inter, sans-serif;
+        font-size: 12px;
+        line-height: 16px;
+        color: #A1A1AA;
+    }
+
+    .zfe-mbar > div {
+        min-width: 0;
+    }
+
+    .zfe-mbar-value {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 500;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+    }
+
+    .zfe-mbar a {
+        flex-shrink: 0;
+        padding: 10px 16px;
+        border-radius: 999px;
+        background-color: var(--color-primary, #F3FE00);
+        color: #0D0D0D;
+        font-family: Inter, sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 500;
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .zfe-title {
+        margin-top: 8px;
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .zfe-services {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .zfe-addons {
+        grid-template-columns: 1fr;
+    }
+
+    .zfe-step {
+        padding: 24px 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .zfe-container {
+        padding: 0 16px;
+    }
+
+    .zfe-desc {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .zfe-step-head {
+        flex-direction: column;
+        gap: 4px;
+        margin-bottom: 20px;
+    }
+
+    .zfe-step-hint {
+        text-align: left;
+    }
+
+    .zfe-service {
+        min-height: 150px;
+        gap: 24px;
+        padding: 16px;
+    }
+
+    .zfe-service-name {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .zfe-service-tag {
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .zfe-scope-value {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    .zfe-seg {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .zfe-seg--row {
+        flex-direction: row;
+    }
+
+    .zfe-seg--row .zfe-seg-box {
+        align-items: center;
+        padding: 10px 8px;
+    }
+
+    .zfe-result {
+        padding: 24px 20px;
+    }
+
+    .zfe-price,
+    .zfe-price.is-long {
+        font-size: 30px;
+        line-height: 38px;
+        letter-spacing: -0.6px;
+    }
+
+    .zfe-stat-value {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .zfe *,
+    .zfe *::before,
+    .zfe *::after {
+        transition: none !important;
+    }
+}
